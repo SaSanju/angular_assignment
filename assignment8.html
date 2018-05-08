@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="tableCtrl8.js"></script>
+<style>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+</style>
+</head>
+
+<body>
+
+<div ng-app="tableApp" ng-controller="tableController">
+  <br>
+  <div>
+  <button type="button" ng-click="addTable()">Generate tables of 5</button>
+  </div>
+  <br>
+
+<table style="width:30%">
+  <tr ng-repeat="x in tableArry">
+    <td>{{ x.number }}</td>
+  </tr>
+</table>
+</div>
+
+</body>
+</html>

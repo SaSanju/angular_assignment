@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="retailCtrl6.js"></script>
+<style>
+li {
+list-style-type: none;
+}
+</style>
+</head>
+
+<body>
+
+<div ng-app="retailApp" ng-controller="retailController">
+  <section>
+        <br>
+	<li>Total Bill Ammount: <b>{{ totalAmount }}</b> /- </li>
+        <p>Coupon Code: <input type="text" ng-model="code"></p>
+
+<div ng-switch="code">
+  <div ng-switch-when="CDMK1610">
+     <h3>Discount is 10%</h3>
+     <li>Final billing Ammount: <b>{{ totalAmount * 0.9 }}</b> /- </li>
+  </div>
+  <div ng-switch-when="CDMK1620">
+     <h3>Discount is 20%</h3>
+     <li>Final billing Ammount: <b>{{ totalAmount * 0.8 }}</b> /- </li>
+  </div>
+  <div ng-switch-when="CDMK1690">
+     <h3>Discount is 90%</h3>
+     <li>Final billing Ammount: <b>{{ totalAmount * 0.1 }}</b> /- </li>
+  </div>
+  <div ng-switch-default>
+     <h3>Discount is 5%</h3>
+     <li>Final billing Ammount: <b>{{ totalAmount * 0.95 }}</b> /- </li>
+  </div>
+</div>
+  </section>
+</div>
+
+</body>
+</html>

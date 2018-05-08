@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="cdCtrl5.js"></script>
+<style>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div ng-app="cdApp" ng-controller="CDController">
+<br>
+<form>
+<b>CD ID: </b><input ng-model="cdDetails.CDId">
+<b>CD Title: </b><input ng-model="cdDetails.CDTitle">
+<b>CD Price: </b><input ng-model="cdDetails.CDPrice">
+</form>
+<br>
+<table style="width:70%">
+  <tr>
+    <th>CD ID</th>
+    <th>CD Title</th>
+    <th>CD Price</th>
+  </tr>
+  <tr>
+    <td>{{ cdDetails.CDId }}</td>
+    <td>{{ cdDetails.CDTitle }}</td>
+    <td>{{ cdDetails.CDPrice }}</td>
+  </tr>
+</table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="personCtrl">
+<form>
+  <div>User Name: <input type="text" ng-model="username"></div>
+  <div>City Name: <input type="text" ng-model="cityname"></div>
+</form>
+  <br>
+  <div ng-bind="username | uppercase"></div>
+  <div ng-bind="cityname | uppercase"></div>
+  <p ng-show="username != null && cityname != null">{{ today | date }}</p>
+</div>
+
+</body>
+
+<script>
+angular.module('myApp', []).controller('personCtrl', function($scope) {
+   $scope.today = new Date();
+});
+</script>
+
+</html>

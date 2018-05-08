@@ -1,0 +1,108 @@
+<!doctype html>
+
+<html ng-app="myApp">
+
+  <head>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+ 
+<style>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+</style> 
+</head>
+  
+<body>
+    
+<script type="text/ng-template" id="pages/home.html">
+
+      <h1>Top CDs Collection</h1>
+
+        <table style="width:70%">
+  <tr>
+    <th>CD Name</th>
+    <th>Language</th>
+    <th>Price</th>
+  </tr>
+  <tr ng-repeat="x in cdArry">
+    <td>{{ x.title }}</td>
+    <td>{{ x.language }}</td>
+    <td>{{ x.price }}</td>
+  </tr>
+</table>
+</script>
+    
+<script type="text/ng-template" id="pages/new.html">
+ 
+     <h1>New CDs Collection</h1>
+
+        <table style="width:70%">
+  <tr>
+    <th>CD Name</th>
+    <th>Language</th>
+    <th>Price</th>
+  </tr>
+  <tr ng-repeat="x in cdArry">
+    <td>{{ x.title }}</td>
+    <td>{{ x.language }}</td>
+    <td>{{ x.price }}</td>
+  </tr>
+</table>
+</script>
+    
+<script type="text/ng-template" id="pages/all.html">
+
+     <h1>All CDs Collection</h1>
+
+        <table style="width:70%">
+  <tr>
+    <th>CD Name</th>
+    <th>Language</th>
+    <th>Price</th>
+  </tr>
+  <tr ng-repeat="x in cdArry">
+    <td>{{ x.title }}</td>
+    <td>{{ x.language }}</td>
+    <td>{{ x.price }}</td>
+  </tr>
+</table>
+</script>
+
+ 
+<nav>
+<a href="#/">Top 5 CDs</a>
+
+<a href="#/new">New CDs</a>
+<a href="#/all">View all CDs</a>
+
+
+</nav>
+
+      <div ng-controller="HomeController">
+      <br>
+      <h4> CD parlor name: {{ cdDetails.parlorName }} </h4>
+      <p>{{ cdDetails.address }}</p>
+      </div>
+   
+<div ng-view></div>
+
+    
+<script src="app.js"></script>
+
+</body>
+
+</html>

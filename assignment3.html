@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="appCtrl">
+  <br>
+  <button ng-click="getSystemTime()">Enter</button>
+  <br>
+  <br>
+  <div>The current system time is <b>{{ currentTime | date : "medium" }}</b></div>
+  <div>The last modified time is  <b>{{ modifiedTime | date : "medium" }}</b></div>
+</div>
+
+</body>
+
+<script>
+angular.module('myApp', []).controller('appCtrl', function($scope) {
+
+$scope.currentTime = new Date();
+
+$scope.getSystemTime = function() {
+    var x = document.lastModified;
+    $scope.modifiedTime = x;
+}
+});
+</script>
+
+</html>

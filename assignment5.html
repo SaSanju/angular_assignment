@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="cdCtrl5.js"></script>
+<style>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+</style>
+</head>
+
+<body>
+
+<div ng-app="cdApp" ng-controller="CDController">
+  <br>
+  <h4> CD parlor name: {{ cdDetails.parlorName }} </h4>
+  <p>{{ cdDetails.address }}</p>
+  <br>
+
+<table style="width:70%">
+  <tr>
+    <th>CD Name</th>
+    <th>Language</th>
+    <th>Price</th>
+  </tr>
+  <tr ng-repeat="x in cdArry">
+    <td>{{ x.title }}</td>
+    <td>{{ x.language }}</td>
+    <td>{{ x.price }}</td>
+  </tr>
+</table>
+</div>
+
+</body>
+</html>
